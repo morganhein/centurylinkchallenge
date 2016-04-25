@@ -57,8 +57,8 @@ func StartTheChallenge() error {
 	context := &Context{
 		servers: make(map[string]*server),
 	}
-	log.Printf("Welcome to the CenturyLink Challenge, where all not-quite-snmp needs are fulfilled.")
-	log.Printf("The time is: %v (this is RF3339)", time.Now().Format(time.RFC3339))
+	log.Printf("Welcome to the CenturyLink Challenge, where all your not-quite-snmp needs are fulfilled.")
+	log.Printf("The time is: %v (formatted with RFC3339)", time.Now().Format(time.RFC3339))
 	router := mux.NewRouter()
 	router.HandleFunc("/update", Handler{context, update}.ServeHTTP)
 	router.HandleFunc("/get/{server}", Handler{context, get}.ServeHTTP)
